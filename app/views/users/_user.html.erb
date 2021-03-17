@@ -2,5 +2,11 @@
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+    <% if user != current_user && !current_user.pending_requests.include?(user)%>
+ 
+     <%= link_to 'Invite to friendship',  friendships_path(friend_id: user.id), method: :Post %>    
+    <% end %>
+
+    
   </span>
 </li>

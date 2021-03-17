@@ -1,0 +1,15 @@
+current directory: /Users/salley/microverse/rails/ror-social-scaffold/vendor/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/salley/.rbenv/versions/2.7.2/bin/ruby -I /Users/salley/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210316-48045-1wb9hev.rb extconf.rb
+creating Makefile
+
+current directory: /Users/salley/microverse/rails/ror-social-scaffold/vendor/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/salley/microverse/rails/ror-social-scaffold/vendor/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/salley/microverse/rails/ror-social-scaffold/vendor/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20210316-48045-h7p8kn/skiptrace/internal
