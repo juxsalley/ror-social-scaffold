@@ -16,12 +16,6 @@ module ApplicationHelper
     end
   end
 
-  def accept_request(user)
-    friendship_intend = Friendship.find_by(user_id: user.id, friend_id: 1)
-    byebug
-  end
-  def reject_request() 
 
-  end
 
 end

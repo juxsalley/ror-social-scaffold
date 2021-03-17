@@ -1,25 +1,20 @@
-<% if user_signed_in? %>
-
-<div class="received-invitaions">
-    <% current_user.friend_requests.each do |friend| %>
-    <div class="user-card">
-        <%= friend.email %>
-        <%= friend.id %>
-        <div class="action-buttons">
-            <%= link_to 'accept', accept_request(friend) %>
-            <%= link_to 'reject' %>
+<div class="frinds">
+    <div class="all-friends">
+        <% current_user.friends.each |friend| %>
+        <div class="friend"><%= friend %></div>      
+        <% end %>
+    </div>
+    <div class="incoming-requests">
+        <% current_user.friend_requests.each do |friend| %>
+        <div class="friend">
+            <%= friend %>
+            <div class="action-buttons">
+                <%= link_to 'accept' %>
+                <%= link_to 'reject' %>
+            </div>
         </div>
+            
+        <% end %>
     </div>
-        
-    <% end %>
+
 </div>
-<div class="pending-request">
-    <% current_user.pending_requests.each do |request| %>
-    <div class="user-card">
-        <%= request.email %>
-    </div>
-        
-    <% end %>
-</div>
-    
-<% end %>
