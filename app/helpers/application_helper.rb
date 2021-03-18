@@ -15,6 +15,19 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+  def available_users(user)
+     return false if user == current_user
+     return false if current_user.friends.include?(user)
+     return false if current_user.unconfirmed_requests.include?(user)
+     return true
+  end
 
+  def show_btn(user) 
+    if current_user.friends.include?(user)
+     html_data = "<button class='btn btn-outline-success disabled'> already sent  </button> ".html_safe 
+     return html_data
+    end
+
+  end
 
 end
