@@ -1,0 +1,5 @@
+<% if current_user %> <% current_user.received_friendrequests.each do |friend| %>
+
+<div class="frind-item"><%= friend %></div>
+
+<% end %> <% end %>
