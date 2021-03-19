@@ -8,8 +8,8 @@
 
 <p class=""><%= friend.email %></p>
 <div class="options">
-<%= link_to 'accept', friendship_path(friend), method: :patch %>
-<%= link_to 'reject' %>
+<%= accept_request(friend)%>
+<%= reject_request(friend) %>
 </div>
 
 <% end %> 

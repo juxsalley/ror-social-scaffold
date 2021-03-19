@@ -24,7 +24,11 @@ class FriendshipsController < ApplicationController
             redirect_to root_path, alert: 'action unavailable'
         end
     end
-    def destroy  
+    def destroy 
+        @friend_request = Friendship.find_by(sender_id: params[:id], receiver_id: current_user.id, confirmed: false)
+        redirect_to root_path if @friend_request.nil? 
+        @friend_request.destroy
+        redirect_to root_path, notice: 'friend request rejected'
     end
 
 end

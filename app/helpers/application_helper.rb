@@ -38,12 +38,14 @@ module ApplicationHelper
 
   def accept_request(req)
     send_btn = link_to 'Accept', friendship_path(req),
-    method: :post, class: 'btn btn-outline-success mx-1'
+    method: :patch, class: 'btn btn-outline-success mx-1'
     return send_btn
 
   end
   def reject_request(req) 
-
+    send_btn = link_to 'Reject', friendship_path(req),
+    method: :delete, class: 'btn btn-outline-danger mx-1'
+    return send_btn
   end
 
 end
