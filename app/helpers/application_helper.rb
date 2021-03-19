@@ -15,37 +15,33 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
   def available_users?(user)
-     return false if user == current_user
-     return false if current_user.friends.include?(user)
-     return false if current_user.unconfirmed_requests.include?(user)
-     return true
+    return false if user == current_user
+    return false if current_user.friends.include?(user)
+    return false if current_user.unconfirmed_requests.include?(user)
+
+    true
   end
 
-  def show_btn(user) 
-    if current_user.friends.include?(user)
-     html_data = "<button class='btn btn-outline-success disabled'> already sent  </button> ".html_safe 
-     return html_data
-    end
+  def show_btn(user)
+    return unless current_user.friends.include?(user)
 
+    "<button class='btn btn-outline-success disabled'> already sent  </button> ".html_safe
   end
 
   def add_request(user)
-    send_btn = link_to 'Invite to friendship', friendships_path(receiver_id: user),
-    method: :post, class: 'btn btn-outline-success mx-1'
-    return send_btn
+    link_to 'Invite to friendship', friendships_path(receiver_id: user),
+            method: :post, class: 'btn btn-outline-success mx-1'
   end
 
   def accept_request(req)
-    send_btn = link_to 'Accept', friendship_path(req),
-    method: :patch, class: 'btn btn-outline-success mx-1'
-    return send_btn
-
-  end
-  def reject_request(req) 
-    send_btn = link_to 'Reject', friendship_path(req),
-    method: :delete, class: 'btn btn-outline-danger mx-1'
-    return send_btn
+    link_to 'Accept', friendship_path(req),
+            method: :patch, class: 'btn btn-outline-success mx-1'
   end
 
+  def reject_request(req)
+    link_to 'Reject', friendship_path(req),
+            method: :delete, class: 'btn btn-outline-danger mx-1'
+  end
 end
