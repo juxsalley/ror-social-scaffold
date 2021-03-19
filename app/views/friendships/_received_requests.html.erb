@@ -1,0 +1,18 @@
+<% if @friend_request.size < 1 %>
+
+<p class="border">You have no friend requests yet</p>
+<% else %> 
+<div class="friends border rounded"> 
+    <p class="border"> All request</p>
+<% @friend_request.each do |friend| %>
+
+<p class=""><%= friend.email %></p>
+<div class="options">
+<%= link_to 'accept' %>
+<%= link_to 'reject' %>
+</div>
+
+<% end %> 
+
+</div>
+<% end %>

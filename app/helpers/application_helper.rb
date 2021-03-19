@@ -15,7 +15,7 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
-  def available_users(user)
+  def available_users?(user)
      return false if user == current_user
      return false if current_user.friends.include?(user)
      return false if current_user.unconfirmed_requests.include?(user)
@@ -28,6 +28,12 @@ module ApplicationHelper
      return html_data
     end
 
+  end
+
+  def add_request(user)
+    send_btn = link_to 'Invite to friendship', friendships_path(receiver_id: user),
+    method: :post, class: 'btn btn-outline-success mx-1'
+    return send_btn
   end
 
 end

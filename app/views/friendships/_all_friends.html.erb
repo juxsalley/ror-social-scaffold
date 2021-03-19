@@ -1,0 +1,10 @@
+<% if @allfriends.size < 1%>
+
+<p class="border">You have no friends yet</p>
+<% else %> 
+<p class="border">All friends</p>
+<% @allfriends.each do |friend| %>
+
+<p class="">
+    <%= friend.email %></p>
+<% end %> <% end %>
