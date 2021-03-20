@@ -24,6 +24,16 @@ module ApplicationHelper
     true
   end
 
+  def allfriends(allfriends) 
+    rnd = ""
+    if allfriends.size < 1 
+      rnd = "<p class='border'>You have no friends yet</p>".html_safe
+    else 
+      rnd = "<p class='border'>All friends</p>".html_safe
+    end
+    rnd
+  end
+
   def show_btn(user)
     return unless current_user.friends.include?(user)
 
@@ -31,11 +41,14 @@ module ApplicationHelper
   end
 
   def add_request(user)
+    return unless available_users?(user) 
+
     link_to 'Invite to friendship', friendships_path(receiver_id: user),
             method: :post, class: 'btn btn-outline-success mx-1'
   end
 
   def accept_request(req)
+
     link_to 'Accept', friendship_path(req),
             method: :patch, class: 'btn btn-outline-success mx-1'
   end

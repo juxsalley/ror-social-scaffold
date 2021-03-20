@@ -1,9 +1,5 @@
-<% if @allfriends.size < 1%>
-<p class="border">You have no friends yet</p>
-<% else %> 
-<p class="border">All friends</p>
-<% @allfriends.each do |friend| %>
+<%= allfriends(@allfriends) %>
 
-<p class="">
-    <%=link_to friend.email, user_path(friend) %></p>
-<% end %> <% end %>
+<% @allfriends.each do |frn| %>
+ <%= link_to frn.email, user_path(frn) %> 
+<% end %> 
