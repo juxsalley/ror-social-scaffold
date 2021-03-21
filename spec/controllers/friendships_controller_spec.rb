@@ -9,7 +9,7 @@ RSpec.describe FriendshipsController  do
         sign_in(users(:aaron))
     end
     describe "Create a new friendship " do
-        it "make a post request to friendship model and create a new friendship" do 
+        it "make a post request to friendship model and create a new friendship " do 
         expect(response.status).to eq(200)
         post :create, params: {receiver_id: 1 }
         expect(flash[:notice]).to match(/request sent/)
@@ -18,14 +18,14 @@ RSpec.describe FriendshipsController  do
 
         it "make a post request to friendship model and create a new friendship" do 
         expect(response.status).to eq(200)
-        post :create, params: {receiver_id: 2 }
+        post :create, params: {receiver_id: 3 }
         expect(flash[:notice]).to match(/request sent/)
-      
+       
         end
 
         it "make a post request to friendship model and create a new friendship" do 
         expect(response.status).to eq(200)
-        post :create, params: {receiver_id: 3 }
+        post :create, params: {receiver_id: 2 }
         expect(flash[:notice]).to match(/request sent/)
        
         end
