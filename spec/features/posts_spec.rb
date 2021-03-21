@@ -18,7 +18,7 @@ RSpec.feature 'Posts', type: :feature do
     scenario 'write a post' do
       login_as(users(:iddrisu))
       visit '/posts'
-      fill_in 'post_content',	with: 'another post'
+      fill_in 'post_content', with: 'another post'
       find_button('Save').click
       expect(page).to have_http_status(200)
       expect(page).to have_content('another post')
