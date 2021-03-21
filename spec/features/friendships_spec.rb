@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature "Friendships", type: :feature do
-fixtures :users 
-fixtures :friendships
-background do 
-  Friendship.create(sender_id: 1, receiver_id: 2, confirmed: false)
-  Friendship.create(sender_id: 2, receiver_id: 3, confirmed: false)
-end
+  fixtures :friendships
+  fixtures :users 
+
+
   feature "Send invite" do
     scenario "send an invite" do 
       login_as(users(:iddrisu))
@@ -16,6 +14,13 @@ end
       expect(current_path).to eq('/users')
     end
   end
+  context "user can accept or reject a request" do 
+    scenario "accept request" do 
+      login_as(users(:iddrisu))
+      visit '/friendships'
+      click_on 'Accept'
+      expect(page).to have_content("request accepted")
+    end
 
-
+  end
 end

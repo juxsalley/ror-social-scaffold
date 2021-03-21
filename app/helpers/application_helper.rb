@@ -7,6 +7,12 @@ module ApplicationHelper
     end
   end
 
+  def link_to_post(post)
+    return if post.user.nil?
+
+    link_to post.user.name, user_path(post.user), class: 'post-author'
+  end
+
   def like_or_dislike_btn(post)
     like = Like.find_by(post: post, user: current_user)
     if like

@@ -1,8 +1,8 @@
-first_commrnt: 
+comment_1: 
   content: hello first comment
   
-first_commrnt: 
+comment_2: 
   content: hello second comment
 
-first_commrnt: 
+commit_3: 
   content: hello another comment

@@ -4,8 +4,15 @@ request_one:
   receiver_id: 2
   confirmed: false 
   
-request_one: 
+request_two: 
   id: 2
   sender_id: 2
   receiver_id: 3
   confirmed: false 
+
+request_three: 
+  id: 3
+  sender_id: 3
+  receiver_id: 1
+  confirmed: false 
+ 
