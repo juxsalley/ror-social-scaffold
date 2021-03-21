@@ -1,0 +1,11 @@
+request_one: 
+  id: 1
+  sender_id: 1
+  receiver_id: 2
+  confirmed: false 
+  
+request_one: 
+  id: 2
+  sender_id: 2
+  receiver_id: 3
+  confirmed: false 
