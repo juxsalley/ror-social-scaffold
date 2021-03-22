@@ -1,0 +1,5 @@
+<%= allfriends(@allfriends) %>
+
+<% @allfriends.each do |frn| %>
+ <%= link_to frn.email, user_path(frn) %> 
+<% end %> 

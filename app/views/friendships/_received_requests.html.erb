@@ -1,0 +1,12 @@
+
+<div class="friends border rounded w-90"> 
+    <p class="border"> All request</p>
+<% @friend_request.each do |friend| %>
+
+<p class=""><%= friend.email %></p>
+<div class="options">
+<%= accept_request(friend)%>
+<%= reject_request(friend) %>
+</div>
+
+<% end %> 
