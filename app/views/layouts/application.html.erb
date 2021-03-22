@@ -21,7 +21,7 @@
         </div>
       </div>
       <% if current_user %>
-      <%= link_to 'Friend requests', friendships_path, class: 'btn btn-outline-danger'  %>
+      <%= link_to 'Accept pending friendship', friendships_path, class: 'btn btn-outline-danger'  %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to 'Sign in', user_session_path %>
